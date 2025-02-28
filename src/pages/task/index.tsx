@@ -50,7 +50,7 @@ const TaskPage = () => {
   const handleCompleteTask = async (taskId: number) => {
     try {
       setLoading(true)
-      await request.put(`/tasks/${taskId}/complete`)
+      await request.put(`/tasks/complete/${taskId}`)
       // 更新任务状态
       setTasks(tasks.map(task => 
         task.id === taskId ? { ...task, completed: true } : task
@@ -167,25 +167,28 @@ const TaskPage = () => {
                 )}
               </View>
               <View className='task-actions'>
-                {userInfo?.userType === 'parent' ? (
-                  <Button
-                    type='danger'
-                    size='small'
-                    loading={loading}
-                    onClick={() => handleDeleteTask(task.id)}
-                  >
-                    删除
-                  </Button>
-                ) : userInfo?.userType === 'child' && !task.completed ? (
-                  <Button
-                    type='primary'
-                    size='small'
-                    loading={loading}
-                    onClick={() => confirmComplete(task)}
-                  >
-                    完成任务
-                  </Button>
-                ) : null}
+                {userInfo?.userType === 'parent' && (
+                  <>
+                    <Button
+                      type='danger'
+                      size='small'
+                      loading={loading}
+                      onClick={() => handleDeleteTask(task.id)}
+                    >
+                      删除
+                    </Button>
+                    {!task.completed && (
+                      <Button
+                        type='primary'
+                        size='small'
+                        loading={loading}
+                        onClick={() => confirmComplete(task)}
+                      >
+                        完成任务
+                      </Button>
+                    )}
+                  </>
+                )}
               </View>
             </View>
           </View>
