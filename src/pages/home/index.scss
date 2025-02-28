@@ -1,0 +1,241 @@
+.home-page {
+  .user-card {
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #1677ff 0%, #36a3ff 100%);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(22, 119, 255, 0.2);
+    transition: transform 0.3s ease;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+
+      .user-details {
+        margin-left: 20px;
+
+        .username {
+          font-size: 36px;
+          font-weight: bold;
+          margin-bottom: 8px;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .points {
+          font-size: 28px;
+          opacity: 0.9;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  .parent-actions {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .action-button {
+      height: 120px;
+      font-size: 32px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:active {
+        transform: translateY(2px);
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &.create-task {
+        background: linear-gradient(135deg, #1677ff 0%, #36a3ff 100%);
+      }
+
+      &.create-reward {
+        background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+      }
+    }
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 24px;
+      background-color: #1677ff;
+      border-radius: 2px;
+    }
+  }
+
+  .task-list {
+    .task-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      .task-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        .task-title {
+          font-size: 30px;
+          font-weight: 500;
+          color: #333;
+        }
+
+        .points-tag {
+          background: rgba(22, 119, 255, 0.1);
+          color: #1677ff;
+          padding: 4px 12px;
+          border-radius: 24px;
+          font-size: 24px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          &::before {
+            content: '🎯';
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .empty-tip {
+    text-align: center;
+    color: #999;
+    font-size: 28px;
+    padding: 60px 0;
+    background: #f8f8f8;
+    border-radius: 16px;
+    margin: 20px 0;
+  }
+
+  .reward-list {
+    .reward-card {
+      margin-bottom: 20px;
+
+      .reward-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .reward-title {
+          font-size: 28px;
+          font-weight: 500;
+          color: #333;
+        }
+      }
+
+      .reward-description {
+        font-size: 26px;
+        color: #666;
+      }
+    }
+  }
+
+  :global {
+    .nut-avatar {
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 32px;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .nut-tag {
+      font-size: 24px;
+      padding: 4px 16px;
+      border-radius: 12px;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+    }
+
+    .nut-progress {
+      height: 12px;
+      border-radius: 6px;
+      background-color: #f0f0f0;
+
+      &__portion {
+        border-radius: 6px;
+      }
+
+      &__text {
+        font-size: 24px;
+        color: #666;
+      }
+    }
+
+    .nut-button {
+      &--primary {
+        background-color: #1677ff;
+      }
+
+      &--success {
+        background-color: #52c41a;
+      }
+    }
+  }
+} 

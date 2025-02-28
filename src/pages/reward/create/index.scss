@@ -1,0 +1,24 @@
+.create-reward-page {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  :global {
+    .nut-form {
+      .nut-button {
+        height: 88px;
+        font-size: 32px;
+        border-radius: 44px;
+        margin-top: 40px;
+      }
+
+      .nut-selector {
+        --nutui-selector-border-radius: 8px;
+        --nutui-selector-color: #666;
+        --nutui-selector-active-color: #1677ff;
+        --nutui-selector-active-background: rgba(22, 119, 255, 0.1);
+      }
+    }
+  }
+} 

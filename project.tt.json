@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "childpvp-taro",
+  "description": "ChildPVP - 用游戏化的方式激励您的孩子不断进步！",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}

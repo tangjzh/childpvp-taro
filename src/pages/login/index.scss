@@ -1,0 +1,142 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1677ff, #36a3ff);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+
+  // 背景动画效果
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+    animation: rotate 30s linear infinite;
+  }
+
+  .login-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .login-title {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #1677ff, #36a3ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #1677ff, #36a3ff);
+      border-radius: 2px;
+    }
+  }
+
+  .login-subtitle {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+
+  :global {
+    .nut-form {
+      .nut-form-item {
+        margin-bottom: 24px;
+        background: #f8f9fa;
+        border-radius: 16px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+
+        &:focus-within {
+          background: #fff;
+          box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
+        }
+
+        &__label {
+          font-size: 26px;
+          color: #333;
+          margin-bottom: 8px;
+        }
+
+        .nut-input {
+          border: none;
+          background: transparent;
+          height: 88px;
+          font-size: 28px;
+          
+          &::placeholder {
+            color: #999;
+          }
+        }
+      }
+
+      .nut-button {
+        height: 88px;
+        font-size: 32px;
+        font-weight: 500;
+        border-radius: 44px;
+        background: linear-gradient(135deg, #1677ff, #36a3ff);
+        box-shadow: 0 4px 12px rgba(22, 119, 255, 0.2);
+        margin-top: 40px;
+        transition: all 0.3s ease;
+
+        &:active {
+          transform: translateY(2px);
+          box-shadow: 0 2px 6px rgba(22, 119, 255, 0.2);
+        }
+      }
+    }
+  }
+
+  .login-footer {
+    margin-top: 10px;
+    text-align: center;
+
+    .register-link {
+      display: inline-block;
+      font-size: 10px;
+      color: #1677ff;
+      padding: 12px 24px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      
+      &:active {
+        background: rgba(22, 119, 255, 0.1);
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 

@@ -1,0 +1,183 @@
+.group-management {
+  padding: 20px;
+
+  .create-button {
+    margin-bottom: 20px;
+  }
+
+  .group-list {
+    .group-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      margin-bottom: 16px;
+
+      .group-info {
+        margin-bottom: 12px;
+
+        .group-name {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 8px;
+        }
+
+        .group-meta {
+          font-size: 14px;
+          color: #666;
+
+          .description {
+            margin-bottom: 8px;
+          }
+
+          .member-count {
+            margin-bottom: 4px;
+          }
+        }
+      }
+
+      .group-actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+
+        .action-button {
+          min-width: 80px;
+        }
+      }
+    }
+  }
+
+  .member-management {
+    .member-management-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 12px;
+
+      .group-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .search-section {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      margin-bottom: 20px;
+
+      .nut-searchbar {
+        margin-bottom: 12px;
+      }
+
+      .nut-radio-group {
+        display: flex;
+        gap: 16px;
+      }
+    }
+
+    .member-section,
+    .available-users-section {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      margin-bottom: 20px;
+
+      .section-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .batch-action {
+        margin-bottom: 12px;
+      }
+
+      .member-list,
+      .user-list {
+        .member-item,
+        .user-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px;
+          border-bottom: 1px solid #eee;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .member-info,
+          .user-info {
+            .username {
+              font-size: 16px;
+              margin-bottom: 4px;
+            }
+
+            .user-type {
+              font-size: 14px;
+              color: #666;
+            }
+
+            .user-groups {
+              font-size: 12px;
+              color: #999;
+              margin-top: 4px;
+            }
+          }
+
+          .member-actions,
+          .user-actions {
+            display: flex;
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .nut-dialog {
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .nut-form {
+      .nut-form-item {
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+
+          &:focus {
+            outline: none;
+            border-color: #2080f0;
+          }
+
+          &::placeholder {
+            color: #999;
+          }
+        }
+
+        textarea {
+          min-height: 80px;
+          resize: vertical;
+        }
+      }
+    }
+  }
+}

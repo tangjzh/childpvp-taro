@@ -1,0 +1,214 @@
+.task-page {
+  .task-filter {
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    :global {
+      .nut-tabs {
+        &__titles {
+          border-radius: 8px;
+          background: #f5f7fa;
+          padding: 4px;
+        }
+
+        &__titles-item {
+          flex: 1;
+          font-size: 24px;
+          color: #666;
+          padding: 12px 0;
+          transition: all 0.3s ease;
+          position: relative;
+          border-radius: 6px;
+
+          &--active {
+            color: #1677ff;
+            background: #fff;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(22, 119, 255, 0.1);
+          }
+        }
+
+        &__line {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .task-list {
+    .task-card {
+      margin-bottom: 16px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+
+      &:active {
+        transform: translateY(1px);
+      }
+
+      .task-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .task-title {
+          font-size: 28px;
+          font-weight: 500;
+          color: #333;
+        }
+
+        .task-status {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .points-tag {
+          background: rgba(22, 119, 255, 0.1);
+          color: #1677ff;
+          padding: 4px 12px;
+          border-radius: 24px;
+          font-size: 24px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          &::before {
+            content: '🎯';
+            font-size: 20px;
+          }
+        }
+      }
+
+      .task-description {
+        font-size: 24px;
+        color: #666;
+        margin-bottom: 16px;
+        line-height: 1.4;
+      }
+
+      .task-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+
+        .task-meta {
+          flex: 1;
+
+          .child-name,
+          .parent-name {
+            font-size: 22px;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+          }
+        }
+
+        .task-actions {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+      }
+
+      &.completed {
+        opacity: 0.8;
+        background: #f8f9fa;
+
+        .task-title {
+          color: #999;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+
+  .empty-tip {
+    text-align: center;
+    padding: 48px 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .empty-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 16px;
+      opacity: 0.5;
+    }
+
+    .empty-text {
+      font-size: 24px;
+      color: #999;
+      margin-bottom: 24px;
+    }
+  }
+
+  :global {
+    .nut-tag {
+      font-size: 22px;
+      padding: 2px 12px;
+      border-radius: 8px;
+      font-weight: 500;
+
+      &--primary {
+        background: rgba(22, 119, 255, 0.1);
+        color: #1677ff;
+        border: none;
+      }
+
+      &--success {
+        background: rgba(82, 196, 26, 0.1);
+        color: #52c41a;
+        border: none;
+      }
+    }
+
+    .nut-button {
+      font-size: 24px;
+      height: 64px;
+      padding: 0 24px;
+      border-radius: 32px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &--primary {
+        background: linear-gradient(135deg, #1677ff 0%, #36a3ff 100%);
+        box-shadow: 0 2px 8px rgba(22, 119, 255, 0.2);
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+
+      &--success {
+        background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+        box-shadow: 0 2px 8px rgba(82, 196, 26, 0.2);
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+
+      &--danger {
+        background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+        box-shadow: 0 2px 8px rgba(255, 77, 79, 0.2);
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+    }
+  }
+}
